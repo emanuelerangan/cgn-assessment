@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  height: 100%;
+  background-color: rgba(0,0,0);
+}
+
+mat-toolbar {
+  mat-spinner {
+    margin-left: auto;
+  }
+}
+
+.personaggi-container {
+  margin: 15px;
+}
+
+table {
+  width: 100%;
+
+  ::ng-deep {
+    tbody {
+      tr {
+        &:hover {
+          background-color: rgba(0,0,0, 0.2);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  tr {
+    td {
+      &:nth-child(2),
+      &:nth-child(3){
+        width: 23%;
+      }
+    }
+  }
+}

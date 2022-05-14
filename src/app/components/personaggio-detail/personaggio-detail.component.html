@@ -1,0 +1,24 @@
+<ng-container>
+  <mat-toolbar>
+    <button [routerLink]="['/']" mat-mini-fab color="primary" aria-label="Back">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <h1 class="text-center" *ngIf="!loading">{{ personaggio.name }}</h1>
+    <mat-spinner color="accent" class="text-right" *ngIf="loading" [diameter]="25"></mat-spinner>
+  </mat-toolbar>
+
+  <mat-card *ngIf="!loading">
+    <mat-card-content>
+      <div class="mat-body-2"><span class="label">Height:</span> {{ personaggio.height }}</div>
+      <div class="mat-body-2"><span class="label">Mass:</span> {{ personaggio.mass }}</div>
+      <div class="mat-body-2"><span class="label">Gender:</span> {{ personaggio.gender }}</div>
+      <div class="mat-body-2"><span class="label">Hair color:</span> {{ personaggio.hair_color }}</div>
+      <div class="mat-body-2"><span class="label">Skin color:</span> {{ personaggio.skin_color }}</div>
+      <div class="mat-body-2"><span class="label">Eye color:</span> {{ personaggio.eye_color }}</div>
+      <div class="mat-body-2"><span class="label">Birth year:</span> {{ personaggio.birth_year }}</div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button color="primary" mat-raised-button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>

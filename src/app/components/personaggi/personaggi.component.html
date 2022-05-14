@@ -1,0 +1,35 @@
+<mat-toolbar>
+  <h1>Personaggi</h1>
+  <mat-spinner color="accent" class="text-right" *ngIf="loading$|async" [diameter]="25"></mat-spinner>
+</mat-toolbar>
+
+<div class="personaggi-container">
+  <table [dataSource]="dataSource" mat-table>
+    <ng-container [matColumnDef]="'name'">
+      <th *matHeaderCellDef mat-header-cell>Name</th>
+      <td *matCellDef="let element" mat-cell>
+        <div class="mat-body-1">{{ element.name }}</div>
+      </td>
+    </ng-container>
+
+    <ng-container [matColumnDef]="'gender'">
+      <th *matHeaderCellDef mat-header-cell>Gender</th>
+      <td *matCellDef="let element" mat-cell>
+        <div class="mat-small">{{ element.gender }}</div>
+      </td>
+    </ng-container>
+
+    <ng-container [matColumnDef]="'height'">
+      <th *matHeaderCellDef mat-header-cell>Height</th>
+      <td *matCellDef="let element" mat-cell>
+        <div class="mat-small">{{ element.height }}</div>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns; sticky: true" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns" [routerLink]="'personaggio/' + row.id" class="interactive" mat-row></tr>
+  </table>
+
+  <mat-paginator [disabled]="loading$|async" [length]="personaggiTotal" [pageSize]="pageSize"></mat-paginator>
+<!--  <div class="mat-error mat-small" *ngIf="error$ | async">An error has occurred.</div>-->
+</div>

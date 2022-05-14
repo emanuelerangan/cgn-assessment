@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  height: 100%;
+  background-color: rgba(0,0,0);
+}
+
+mat-toolbar {
+  mat-spinner {
+    margin-left: auto;
+  }
+}
+
+mat-card {
+  margin: 15px;
+
+  mat-card-title {
+    width: 100%;
+  }
+  mat-card-content {
+    .label {
+      color: rgba(255,255,255,0.6);
+    }
+  }
+
+  .mat-card-actions {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
